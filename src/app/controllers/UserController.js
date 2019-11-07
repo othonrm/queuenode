@@ -1,4 +1,23 @@
 export default {
+
+    async store(req, res) {
+
+        const { name, email, password } = req.body;
+
+        const user = {
+            name,
+            email,
+            password
+        };
+
+        console.log("Deve executar o job de enviar email...");
+
+        // Delay test
+        // await new Promise(res => setTimeout(res, 5000));
+
+        return res.json(user);
+    },
+    
     async get(req, res) {
         const users = [
             {
@@ -234,19 +253,6 @@ export default {
         ];
 
         return res.json(users);
-    },
-
-    async store(req, res) {
-
-        const { name, email, password } = req.body;
-
-
-        const user = {
-            name,
-            email,
-            password
-        };
-
-        return res.json(user);
     }
+
 };
