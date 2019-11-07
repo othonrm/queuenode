@@ -8,6 +8,10 @@ export default {
     // job opts see bull docs
     options: {
         delay: 5000,
+        attempts: 3,
+        retryProcessDelay: 5000,
+        removeOnComplete: true,
+        // removeOnFail: true,
     },
 
     // what this job will do?
