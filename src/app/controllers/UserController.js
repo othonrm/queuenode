@@ -1,3 +1,5 @@
+import Queue from '../lib/Queue';
+
 export default {
 
     async store(req, res) {
@@ -11,6 +13,8 @@ export default {
         };
 
         console.log("Deve executar o job de enviar email...");
+
+        await Queue.add({ user });
 
         // Delay test
         // await new Promise(res => setTimeout(res, 5000));

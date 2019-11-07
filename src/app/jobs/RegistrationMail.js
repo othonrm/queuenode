@@ -20,6 +20,10 @@ export default {
             html: `<h1>Oi, ${name}.</h1> <br> Apenas uma teste de fila...`
         });
 
+        await new Promise(res => setTimeout(res, 5000));
+
+        console.log("Job de enviar email executado com sucesso!");
+
     }
 
 }
