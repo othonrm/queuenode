@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import Queue from '../lib/Queue';
 
 export default {
@@ -14,7 +16,7 @@ export default {
 
         console.log("Deve executar o job de enviar email...");
 
-        await Queue.add({ user });
+        await Queue.add('RegistrationMail', { user, registration_date: moment().format("HH:mm:ss DD/MM/YYYY") });
 
         // Delay test
         // await new Promise(res => setTimeout(res, 5000));
